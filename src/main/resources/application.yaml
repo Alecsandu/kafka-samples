@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: kafka-samples
+    kafka:
+        bootstrap-servers: localhost:9092
+
+logging:
+    level:
+        root: WARN
+        org.springframework: WARN
+        org.apache.kafka: WARN
+        org.springframework.kafka: WARN
