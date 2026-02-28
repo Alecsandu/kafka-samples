@@ -53,12 +53,8 @@ public class KafkaService {
     }
 
     @KafkaListener(topics = "KafkaTopic")
-    public void listenWithHeaders(
-            @Payload String message,
-            @Header(KafkaHeaders.RECEIVED_PARTITION) int partition) {
-        System.out.println(
-                "Received Message: " + message
-                        + "from partition: " + partition);
+    public void listenWithHeaders(@Payload String message, @Header(KafkaHeaders.RECEIVED_PARTITION) int partition) {
+        System.out.println("Received Message: " + message + "from partition: " + partition);
         System.out.println();
     }
 
