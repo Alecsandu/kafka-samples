@@ -41,6 +41,12 @@ public class KafkaService {
         });
     }
 
+    /**
+     * When listeners are set on same topic with same groupId or no groupId, I saw that the listeners
+     * without a groupId set is used, in the case the listenWithHeaders method will be called.
+     *
+     * @param message the payload that is received.
+     */
     @KafkaListener(topics = "KafkaTopic", groupId = "foo")
     public void listenGroupFoo(String message) {
         System.out.println("Received Message in group foo: " + message);
